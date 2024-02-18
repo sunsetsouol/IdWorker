@@ -1,4 +1,4 @@
-package shop.sunsetsouol.IdStrategy;
+package shop.sunsetsouol.IdStrategy.IdGen;
 
 /**
  * @author yinjunbiao

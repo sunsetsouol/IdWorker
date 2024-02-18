@@ -1,8 +1,9 @@
-package shop.sunsetsouol.IdStrategy.Impl;
+package shop.sunsetsouol.IdStrategy.IdGen.Impl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import shop.sunsetsouol.IdStrategy.IdGenerator;
+import shop.sunsetsouol.IdStrategy.IdGen.IdGenerator;
+import shop.sunsetsouol.IdStrategy.IdType.IdType;
 
 import javax.annotation.PostConstruct;
 import java.util.concurrent.atomic.AtomicLong;
@@ -143,6 +144,11 @@ public class SnowFlake extends IdGenerator {
                 | (dataCenterId << (dataCenterShift))
                 | (workerId << workerShift)
                 | mySequence;
+    }
+
+    @Override
+    public String getType() {
+        return IdType.LONG.type;
     }
 
     /**
