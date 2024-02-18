@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @date 2024/2/15
  */
 @Component
-public class SnowFlake implements IdGenerator {
+public class SnowFlake extends IdGenerator {
 
     /**
      * 开始时间戳
@@ -94,7 +94,7 @@ public class SnowFlake implements IdGenerator {
     }
 
     @Override
-    public long getId() {
+    public long getLongId() {
 
         long now = System.currentTimeMillis();
 

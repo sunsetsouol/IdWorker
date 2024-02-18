@@ -7,7 +7,9 @@ package shop.sunsetsouol.IdStrategy;
  */
 
 public enum IdGenType {
-    SNOWFLAKE("snowflake");
+    SNOWFLAKE("snowflake"),
+    UUID("uuid");
+
 
     public final String type;
 
