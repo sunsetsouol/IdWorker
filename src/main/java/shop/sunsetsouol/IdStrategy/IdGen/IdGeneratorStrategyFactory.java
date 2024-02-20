@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import shop.sunsetsouol.IdStrategy.IdGen.IdGenType;
 import shop.sunsetsouol.IdStrategy.IdGen.IdGenerator;
 import shop.sunsetsouol.IdStrategy.IdGen.Impl.SnowFlake;
+import shop.sunsetsouol.IdStrategy.IdGen.Impl.TickerServers;
 import shop.sunsetsouol.IdStrategy.IdGen.Impl.UUIDGenerator;
 
 import javax.annotation.PostConstruct;
@@ -25,10 +26,14 @@ public class IdGeneratorStrategyFactory {
     @Autowired
     private UUIDGenerator uuidGenerator;
 
+    @Autowired
+    private TickerServers ticketServers;
+
     @PostConstruct
     protected void init(){
         idGeneratorHashMap.put(IdGenType.SNOWFLAKE.type, snowFlake);
         idGeneratorHashMap.put(IdGenType.UUID.type, uuidGenerator);
+        idGeneratorHashMap.put(IdGenType.TICKET_SERVERS.type, ticketServers);
     }
 
     public IdGenerator getIdGeneratorStrategy(String strategyType) {

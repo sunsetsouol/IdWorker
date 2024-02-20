@@ -8,7 +8,8 @@ package shop.sunsetsouol.IdStrategy.IdGen;
 
 public enum IdGenType {
     SNOWFLAKE("snowflake"),
-    UUID("uuid");
+    UUID("uuid"),
+    TICKET_SERVERS("ticketServers");
 
 
     public final String type;
